@@ -1,6 +1,7 @@
 import LoginWindow from "./ui/LoginWindow";
 import MainWindow from "./ui/MainWindow";
 import UserName from "./ui/UserName";
+import UserList from "./ui/userList";
 
 export default class Chat {
     constructor() {
@@ -16,7 +17,7 @@ export default class Chat {
         userName: new UserName(
             document.querySelector('[data-role=user-name]')),
 
-        userList: new userList(
+        userList: new UserList(
             document.querySelector('[data-role=user-list]')
         ),
         messageList: new MessageList(
