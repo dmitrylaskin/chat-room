@@ -31,6 +31,11 @@ export default class Chat {
 
     this.ui.loginWindow.show()
 };
+    onSend(message) {
+        this.wsClient.sendTextMessage(message)
+        this.ui.messageSender.clear()
+    }
+
     async onLogin(name) {
         await this.wsClient.connect()
         this.wsClient.sendHello(name)
