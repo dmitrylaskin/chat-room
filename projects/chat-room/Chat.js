@@ -9,8 +9,7 @@ export default class Chat {
             document.querySelector('#main'), this.onLogin.bind(this)
         ),
         userName: new UserName(
-            document.querySelector('[data-role=user-name]'), this.onLogin.bind(this)
-        )
+            document.querySelector('[data-role=user-name]'))
     }
     this.ui.loginWindow.show()
 };
