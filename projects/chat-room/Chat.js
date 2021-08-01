@@ -1,7 +1,8 @@
-import LoginWindow from "./ui/LoginWindow";
-import MainWindow from "./ui/MainWindow";
-import UserName from "./ui/UserName";
+import LoginWindow from "./ui/loginWindow";
+import MainWindow from "./ui/mainWindow";
+import UserName from "./ui/userName";
 import UserList from "./ui/userList";
+import MessageList from "./ui/messageList";
 
 export default class Chat {
     constructor() {
