@@ -3,10 +3,12 @@ import MainWindow from "./ui/mainWindow";
 import UserName from "./ui/userName";
 import UserList from "./ui/userList";
 import MessageList from "./ui/messageList";
+import WSClient from "./wsClient";
+import MessageSender from "./ui/messageSender";
 
-export default class Chat {
+export default class MegaChat {
     constructor() {
-        this.wsClient = new WSClient(`ws://${location.host}/chat/ws`, this.onMessage.bind(this))
+        this.wsClient = new WSClient(`ws://${location.host}/chat-room/ws`, this.onMessage.bind(this))
 
     this.ui = {
         loginWindow: new LoginWindow(
@@ -16,8 +18,8 @@ export default class Chat {
             document.querySelector('#main')
         ),
         userName: new UserName(
-            document.querySelector('[data-role=user-name]')),
-
+            document.querySelector('[data-role=user-name]')
+        ),
         userList: new UserList(
             document.querySelector('[data-role=user-list]')
         ),
@@ -37,8 +39,8 @@ export default class Chat {
     }
 
     async onLogin(name) {
-        await this.wsClient.connect()
-        this.wsClient.sendHello(name)
+        // await this.wsClient.connect()
+        // this.wsClient.sendHello(name)
         this.ui.loginWindow.hide()
         this.ui.mainWindow.show()
         this.ui.userName.set(name)

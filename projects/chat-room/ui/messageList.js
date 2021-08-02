@@ -19,7 +19,7 @@ export default class MessageList {
         </div>
         <div class="message-item-right">
             <div class="message-item-header">
-                <div class="message-item-header-name">${secureXSS(name)}</div>
+                <div class="message-item-header-name">${secureXSS(from)}</div>
                 <div class="message-item-header-time">${time}</div>
             </div>
             <div class="message-item-text">${secureXSS(text)}</div>

@@ -1,4 +1,4 @@
 import './index.html';
-import Chat from './Chat';
+import MegaChat from './megaChat';
 
-new Chat();
+new MegaChat();

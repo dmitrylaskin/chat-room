@@ -4,17 +4,19 @@ export default  class WSClient {
         this.onMessage = onMessage
     }
     connect() {
-        return new Promise(resolve => {
+        return new Promise((resolve) => {
             this.socket = new WebSocket(this.url)
             this.socket.addEventListener('open', resolve)
-            this.socket.addEventListener('message', (event) => {
-                this.onMessage(JSON.parse(event.data))
+            this.socket.addEventListener('message', (e) => {
+                this.onMessage(JSON.parse(e.data))
             })
+            console.log('connected')
         })
     }
 
     sendHello(name) {
         this.sendMessage('hello', {name})
+        console.log('name to send: ', name)
     }
 
     sendTextMessage(message) {
